@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My E-commerce Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <style>
+        header {
+            background-color: #1779f1;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .search-bar {
+            flex-grow: 1;
+            max-width: 200px;
+            margin: 10px;
+            position: relative;
+        }
+        .search-input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            font-size: 16px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .product-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s;
+        }
+        .product-card:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .product-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .product-info {
+            padding: 15px;
+            text-align: center;
+        }
+        .product-title {
+            font-size: 18px;
+            margin: 10px 0;
+            color: #333;
+        }
+        .product-price {
+            font-size: 16px;
+            color: #b12704;
+            margin-bottom: 10px;
+        }
+        .buy-now {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ffa41c;
+            color: #fff;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .buy-now:hover {
+            background-color: #d38b14;
+        }
+        footer {
+            background-color: #232f3e;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <!-- Header Container -->
+    <header class="header">
+      <!-- Logo -->
+      <div class="logo">MY STORE<span>Explore every thing</span></div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+          <input type="text" placeholder="Search for Products, Brands and More">
+      </div>
+
+      <!-- Navigation Links -->
+      <ul class="nav-links">
+          <li><a href="Home.html">Home</a></li>
+          <li><a href="Shop.html">Shop</a></li>
+          <li><a href="Categories.html">Categories</a></li>
+          <li><a href="about.html">Contact</a></li>
+          <li><a href="index.html">Login</a></li>
+      </ul>
+
+      <!-- Icon Buttons -->
+<div class="icon-buttons">
+  <a href="#" onclick="toggleCartModal()">
+      <span class="icon">🛒</span> Cart
+      <span id="cart-count">(0)</span>
+  </a>
+  <a href="#"><span class="icon">🏠</span> Become a Seller</a>
+</div>
+
+
+
+<!-- Cart Modal -->
+<div id="cart-modal" class="modal">
+  <div class="modal-content">
+      <h2>Your Cart</h2>
+      <ul id="cart-items-list"></ul>
+      <p id="cart-total">Total: $0.00</p>
+      <button onclick="checkout()">Proceed to Checkout</button>
+      <button onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+        
+          
+        </div>
+    </header>
+    <!-- home content -->
+    <section class="home">
+        <div class="content">
+          <h1> <span>Grocery Products</span>
+            <br>
+            Up To <span id="span2">50%</span> Off
+          </h1>
+          <p>Discover the best deals on top-quality Grocery products
+            <br>Shop smart, live smarter
+          </p>
+          <div class="btn"><button>Shop Now</button></div>
+    
+        </div>
+        <div class="img">
+          <img src="./images/background.png" alt="">
+        </div>
+      </section>
+        <!-- home content -->
+
+    <!-- Product Grid -->
+  
+     
+    <section id="budget-store">
+      <h2>Budget Store - Home, Kitchen & Outdoors</h2>
+      <div class="grid-container">
+          <div class="grid-item">
+              <h3>Revamp your home in style</h3>
+              <img src="buying products/shirts.jpg" alt="Mens wear">
+              <p>mens wears & more</p>
+              <p>Up to 55% off</p>
+              <p>Explore all</p>
+          </div>
+          <div class="grid-item">
+              <h3>stationeries</h3>
+              <img src="buying products/schoolbag.jpg" alt="school bags">
+              <p>Up to 55% off</p>
+              <p>See more</p>
+          </div>
+          <div class="grid-item">
+              <h3>Starting ₹149 | tea</h3>
+              <img src="buying products/Beverages.jpg" alt="tea powder">
+              <p>Brands like tata, red label, & more</p>
+              <p>See all offers</p>
+          </div>
+          <div class="grid-item">
+              <h3>Starting ₹99 | protiens & more</h3>
+              <img src="buying products/proties.jpg" alt=" Brands">
+              <p>Boost your Power</p>
+              <p>Shop now</p>
+          </div>
+          <div class="grid-item">
+            <h3>Starting ₹99 | shoes & more</h3>
+            <img src="buying products/shoes.jpg.png" alt=" Brands">
+            <p>Home storage, toys & more</p>
+            <p>Shop now</p>
+        </div>
+        <div class="grid-item">
+          <h3>Starting ₹99 | noodles & more</h3>
+          <img src="buying products/PastsNoodles.jpg" alt=" Brands">
+          <p>pasta and noodles</p>
+          <p>Shop now</p>
+      </div>
+     
+      </div>
+  </section>
+  <section id="offer-zone">
+    <h2>FOOD ESSENTIALS OFFER ZONE</h2>
+    <div class="offer-container">
+        <!-- Main Offer -->
+        <div class="main-offer">
+            <img src="buying products/add1.jpg.png" alt="Food essentials">
+        </div>
+        
+        <!-- Side Offers -->
+        <div class="side-offers">
+            <div class="side-offer">
+                <img src="buying products/add2.jpg.png" alt="Organic Range">
+            </div>
+            <div class="side-offer">
+                <img src="buying products/add3.jpg.png" alt="Masalas & Spices">
+            </div>
+        </div>
+    </div>
+</section>
+
+      <!-- Add more products as needed -->
+  </section>
+    <section class="product-grid">
+        <div class="product" data-price="20">
+            <img src="buying products/green.jpg" alt="Product 1">
+            <h2>Vegetables</h2>
+            <p>22.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+           
+        </div>
+        
+        <div class="product" data-price="35">
+            <img src="buying products/daily.jpg" alt="Product 2">
+            <h2>Daily Needs</h2>
+            <p>15.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/proties.jpg" alt="Product 3">
+            <h2>Proteins</h2>
+            <p>350.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/salt.jpg" alt="Product 4">
+            <h2>Salt</h2>
+            <p>30.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+            <img src="buying products/PastsNoodles.jpg" alt="Product 5">
+            <h2>Noodles</h2>
+            <p>50.00</p>
+            <button onclick="addToCart(this)">Add to Cart</button>
+        </div>
+        <div class="product" data-price="15">
+          <img src="buying products/honey.jpg" alt="Product 3">
+          <h2>Honey</h2>
+          <p>150.00</p>
+          <button onclick="addToCart(this)">Add to Cart</button>
+      </div>
+      <div class="product" data-price="15">
+        <img src="buying products/buscits.jpg" alt="Product 3">
+        <h2>Buscits</h2>
+        <p>20.00</p>
+        <button onclick="addToCart(this)">Add to Cart</button>
+    </div>
+    <div class="product" data-price="15">
+      <img src="buying products/grains.jpg" alt="Product 3">
+      <h2>chawal</h2>
+      <p>80.00</p>
+      <button onclick="addToCart(this)">Add to Cart</button>
+  </div>
+  <div class="product" data-price="15">
+    <img src="buying products/snacks.jpg" alt="Product 3">
+    <h2>Snacks</h2>
+    <p>50.00</p>
+    <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/Beverages.jpg" alt="Product 3">
+  <h2>Beverages</h2>
+  <p>40.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/surf.jpg" alt="Product 3">
+  <h2>Surf Excel</h2>
+  <p>50.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/surfpowder" alt="Product 3">
+  <h2>Surf Excel powder</h2>
+  <p>50.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/oil.jpg" alt="Product 3">
+  <h2>Oil</h2>
+  <p>150.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/dettol.jpg" alt="Product 3">
+  <h2>dettol</h2>
+  <p>20.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/thumbsup.jpg" alt="Product 3">
+  <h2>thumbsup</h2>
+  <p>35.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/fanta.jpg" alt="Product 3"> 
+  <h2>Fanta</h2>
+  <p>35.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/masale.jpg" alt="Product 3">
+  <h2>Masale</h2>
+  <p>35.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+<div class="product" data-price="15">
+  <img src="buying products/milk.jpg" alt="Product 3">
+  <h2>Milk</h2>
+  <p>60.00</p>
+  <button onclick="addToCart(this)">Add to Cart</button>
+</div>
+        <!-- Add more products as needed -->
+    </section>
+
+   
+
+    <script src="script.js"></script>
+</body>
+
+
+
+<style>
+  /* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.icon-buttons a {
+  text-decoration: none;
+  padding: 10px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 5px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.icon-buttons a:hover {
+  background-color: #0056b3;
+}
+
+button {
+  padding: 10px 20px;
+  margin: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+</style>
+</html>
